@@ -63,6 +63,10 @@ function handleOpts(opts) {
 		opts._config.rules['semi-spacing'] = [2, {before: false, after: true}];
 	}
 
+	if (opts.allman) {
+		opts._config.rules['brace-style'] = [2, 'allman'];
+	}
+
 	if (opts.esnext) {
 		opts._config.baseConfig.extends = 'xo/esnext';
 	}
@@ -72,7 +76,6 @@ function handleOpts(opts) {
 
 exports.lintText = function (str, opts) {
 	opts = handleOpts(opts);
-
 	var engine = new eslint.CLIEngine(opts._config);
 
 	return engine.executeOnText(str, opts.filename);

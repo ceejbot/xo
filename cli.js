@@ -20,6 +20,7 @@ var cli = meow({
 		'  --ignore        Additional paths to ignore  [Can be set multiple times]',
 		'  --space         Use space indent instead of tabs  [Default: 2]',
 		'  --no-semicolon  Prevent use of semicolons',
+		'  --allman        Enforce Allman bracing style',
 		'',
 		'Examples',
 		'  $ xo',
@@ -39,7 +40,8 @@ var cli = meow({
 	boolean: [
 		'init',
 		'compact',
-		'stdin'
+		'stdin',
+		'allman'
 	]
 });
 
